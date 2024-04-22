@@ -10,40 +10,29 @@ namespace Task__1._7
     {
         static void Main()
         {
-            int minutesNumberInHour = 60;
-            int timeToServeOnePatientInMinutes = 10;
+            const int MinutesNumberInHour = 60;
+            const int TimeToServeOnePatientInMinutes = 10;
 
-            int quantityOfPatients;
+            string userInput;
+            bool isSuccess;
+
+            uint quantityOfPatients;
             int timeToServeAllPatientsInMinutes;
             int hoursToServeAllPatients;
             int extraMinutesToServeAllPatients;
 
-            Console.Write("Сколько пациентов в очереди? \nПоле для ввода: ");
-            quantityOfPatients = GetInt(0);
-            timeToServeAllPatientsInMinutes = quantityOfPatients * timeToServeOnePatientInMinutes;
-            hoursToServeAllPatients = timeToServeAllPatientsInMinutes / minutesNumberInHour;
-            extraMinutesToServeAllPatients = timeToServeAllPatientsInMinutes % minutesNumberInHour;
+            do
+            {
+                Console.Write("Сколько пациентов в очереди? \nПоле для ввода: ");
+                userInput = Console.ReadLine();
+                isSuccess = uint.TryParse(userInput, out quantityOfPatients);
+            } while (isSuccess == false);
+
+            timeToServeAllPatientsInMinutes = (int)quantityOfPatients * TimeToServeOnePatientInMinutes;
+            hoursToServeAllPatients = timeToServeAllPatientsInMinutes / MinutesNumberInHour;
+            extraMinutesToServeAllPatients = timeToServeAllPatientsInMinutes % MinutesNumberInHour;
 
             Console.WriteLine($"\nВ очереди стоит {quantityOfPatients} людей, так что вся очередь займёт {hoursToServeAllPatients} часов {extraMinutesToServeAllPatients} минут");
-        }
-
-        static int GetInt(int minValue = int.MinValue, int maxValue = int.MaxValue)
-        {
-            int numberForReturning;
-            string userInput;
-            bool isSuccess;
-
-            userInput = Console.ReadLine();
-            isSuccess = int.TryParse(userInput, out numberForReturning) && minValue <= numberForReturning && numberForReturning <= maxValue;
-
-            while (!isSuccess)
-            {
-                Console.Write("\nОшибка ввода. Попробуйте ещё раз. \nПоле для ввода: ");
-                userInput = Console.ReadLine();
-                isSuccess = int.TryParse(userInput, out numberForReturning) && minValue <= numberForReturning && numberForReturning <= maxValue;
-            }
-
-            return numberForReturning;
         }
     }
 }
