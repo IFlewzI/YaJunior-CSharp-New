@@ -10,13 +10,13 @@ namespace Task_2._6
     {
         static void Main()
         {
-            const string ConvertRubToUsdCommand = "rub to usd";
-            const string ConvertRubToEurCommand = "rub to eur";
-            const string ConvertUsdToRubCommand = "usd to rub";
-            const string ConvertUsdToEurCommand = "usd to eur";
-            const string ConvertEurToRubCommand = "eur to rub";
-            const string ConvertEurToUsdCommand = "eur to usd";
-            const string ShowBalanceCommand = "balance";
+            const string ConvertRubToUsdCommand = "1";
+            const string ConvertRubToEurCommand = "2";
+            const string ConvertUsdToRubCommand = "3";
+            const string ConvertUsdToEurCommand = "4";
+            const string ConvertEurToRubCommand = "5";
+            const string ConvertEurToUsdCommand = "6";
+            const string ShowBalanceCommand = "7";
             const string ClearCommand = "clear";
             const string HelpCommand = "help";
             const string ExitCommand = "exit";
@@ -39,7 +39,7 @@ namespace Task_2._6
 
             while (isProgramRunning)
             {
-                Console.Write("Введите команду (help, чтобы увидеть список команд) \nПоле для ввода: ");
+                Console.Write($"Введите команду ({HelpCommand}, чтобы увидеть список команд) \nПоле для ввода: ");
                 userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == ConvertRubToUsdCommand.ToLower()
@@ -150,16 +150,16 @@ namespace Task_2._6
                 else if (userInput.ToLower() == HelpCommand.ToLower())
                 {
                     Console.WriteLine("\nСписок команд: " +
-                        $"\n1) Конвертировать рубли в доллары - \t{ConvertRubToUsdCommand}" +
-                        $"\n2) Конвертировать рубли в евро - \t{ConvertRubToEurCommand}" +
-                        $"\n3) Конвертировать доллары в рубли - \t{ConvertUsdToRubCommand}" +
-                        $"\n4) Конвертировать доллары в евро - \t{ConvertUsdToEurCommand}" +
-                        $"\n5) Конвертировать евро в рубли- \t{ConvertEurToRubCommand}" +
-                        $"\n6) Конвертировать евро в доллары - \t{ConvertEurToUsdCommand}" +
-                        $"\n7) Баланс - \t\t{ShowBalanceCommand}" +
-                        $"\n8) Очистить консоль - \t{ClearCommand}" +
-                        $"\n9) Помощь - \t\t{HelpCommand}" +
-                        $"\n10) Выход - \t\t{ExitCommand}");
+                        $"\nКонвертировать рубли в доллары - \t{ConvertRubToUsdCommand}" +
+                        $"\nКонвертировать рубли в евро - \t\t{ConvertRubToEurCommand}" +
+                        $"\nКонвертировать доллары в рубли - \t{ConvertUsdToRubCommand}" +
+                        $"\nКонвертировать доллары в евро - \t{ConvertUsdToEurCommand}" +
+                        $"\nКонвертировать евро в рубли- \t\t{ConvertEurToRubCommand}" +
+                        $"\nКонвертировать евро в доллары - \t{ConvertEurToUsdCommand}" +
+                        $"\nБаланс - \t\t{ShowBalanceCommand}" +
+                        $"\nОчистить консоль - \t{ClearCommand}" +
+                        $"\nПомощь - \t\t{HelpCommand}" +
+                        $"\nВыход - \t\t{ExitCommand}");
                 }
                 else if (userInput.ToLower() == ExitCommand.ToLower())
                 {

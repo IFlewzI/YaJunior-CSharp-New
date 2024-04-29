@@ -10,9 +10,9 @@ namespace Task_2._5
     {
         static void Main()
         {
-            const string PrintCurrentDateCommand = "print current date";
-            const string PrintCurrentTimeCommand = "print current time";
-            const string PrintRandomIntNumberCommand = "print random int number";
+            const string PrintCurrentDateCommand = "1";
+            const string PrintCurrentTimeCommand = "2";
+            const string PrintRandomIntNumberCommand = "3";
             const string HelpCommand = "help";
             const string ClearCommand = "clear";
             const string ExitCommand = "exit";
@@ -23,7 +23,7 @@ namespace Task_2._5
 
             while (isProgramRunning)
             {
-                Console.Write("Введите команду (help, чтобы увидеть список команд) \nПоле для ввода: ");
+                Console.Write($"Введите команду ({HelpCommand}, чтобы увидеть список команд) \nПоле для ввода: ");
                 userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == PrintCurrentDateCommand.ToLower())
@@ -43,12 +43,12 @@ namespace Task_2._5
                 else if (userInput.ToLower() == HelpCommand.ToLower())
                 {
                     Console.WriteLine("\nСписок команд: " +
-                        $"\n1) Вывести актуальную дату - {PrintCurrentDateCommand}" +
-                        $"\n2) Вывести актуальное время - {PrintCurrentTimeCommand}" +
-                        $"\n3) Вывести случайное значение типа данных int - {PrintRandomIntNumberCommand}" +
-                        $"\n4) Вывести список всех команд - {HelpCommand}" +
-                        $"\n5) Очистить консоль - {ClearCommand}" +
-                        $"\n6) Завершить работу программы - {ExitCommand}");
+                        $"\nВывести актуальную дату - {PrintCurrentDateCommand}" +
+                        $"\nВывести актуальное время - {PrintCurrentTimeCommand}" +
+                        $"\nВывести случайное значение типа данных int - {PrintRandomIntNumberCommand}" +
+                        $"\nВывести список всех команд - {HelpCommand}" +
+                        $"\nОчистить консоль - {ClearCommand}" +
+                        $"\nЗавершить работу программы - {ExitCommand}");
                 }
                 else if (userInput.ToLower() == ClearCommand.ToLower())
                 {
