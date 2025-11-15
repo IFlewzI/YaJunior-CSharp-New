@@ -20,12 +20,15 @@ namespace Task_2._8
                 Console.Write("Введите пароль. Поле для ввода: ");
                 userInput = Console.ReadLine();
 
-                isPasswordCorrect = userInput == password;
-
-                if (isPasswordCorrect)
+                if (userInput == password)
+                {
+                    isPasswordCorrect = true;
                     break;
+                }
                 else if (i < attemptsQuantity)
+                {
                     Console.WriteLine("Пароль недействителен, попробуйте ещё раз.\n");
+                }
             }
 
             if (isPasswordCorrect)
