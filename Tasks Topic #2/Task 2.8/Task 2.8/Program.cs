@@ -13,18 +13,18 @@ namespace Task_2._8
             string password = "Just Sayori";
             string userInput;
             int attemptsQuantity = 3;
-            int attemptsLeft = attemptsQuantity;
             bool isPasswordCorrect = false;
 
-            while (attemptsLeft > 0 && isPasswordCorrect == false)
+            for (int i = 0; i < attemptsQuantity; i++)
             {
                 Console.Write("Введите пароль. Поле для ввода: ");
                 userInput = Console.ReadLine();
-                attemptsLeft--;
 
                 isPasswordCorrect = userInput == password;
 
-                if (isPasswordCorrect == false && attemptsLeft > 0)
+                if (isPasswordCorrect)
+                    break;
+                else if (i < attemptsQuantity)
                     Console.WriteLine("Пароль недействителен, попробуйте ещё раз.\n");
             }
 
