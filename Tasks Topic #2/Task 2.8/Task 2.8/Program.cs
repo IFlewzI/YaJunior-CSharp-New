@@ -25,7 +25,7 @@ namespace Task_2._8
                     isPasswordCorrect = true;
                     break;
                 }
-                else if (i < attemptsQuantity)
+                else if (i + 1 < attemptsQuantity)
                 {
                     Console.WriteLine("Пароль недействителен, попробуйте ещё раз.\n");
                 }
